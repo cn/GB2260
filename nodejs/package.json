@@ -1,0 +1,20 @@
+{
+  "name": "gb2260",
+  "version": "0.1.0",
+  "description": "中华人民共和国国家标准GB/T 2260 行政区划代码",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cn/GB2260.git"
+  },
+  "keywords": [
+    "China",
+    "GB"
+  ],
+  "author": "Hsiaoming Yang <me@lepture.com>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/cn/GB2260/issues"
+  },
+  "homepage": "https://github.com/cn/GB2260"
+}
