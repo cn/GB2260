@@ -1,7 +1,11 @@
 # 最新县及县以上行政区划代码
 
-GB/T 2260-2013
+GB/T 2260-2013，2013年8月31日
 
-<http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html>
+数据来源： <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html>
 
-2013年8月31日
+你可以利用国家标准数据构建自己项目的数据库。
+
+## 如何贡献
+
+创建你熟悉的语言的模块，请务必使用 MIT/BSD/WTFPL 授权。
