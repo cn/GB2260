@@ -27,7 +27,7 @@ console.log(gb2260.data)
 Parse a code, and get the city name of that code.
 
 ```js
-gb.parse(420822)
+gb2260.parse(420822)
 // => '湖北省 荆门市 沙洋县'
 ```
 
