@@ -1,0 +1,18 @@
+{
+	"name": "cn/gb2260",
+	"description": "中华人民共和国国家标准GB/T 2260 行政区划代码",
+	"minimum-stability": "stable",
+	"license": "WTFPL",
+	"authors": [
+		{
+			"name": "Shen Zhenyu",
+			"email": "zhenyupku@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+		"psr-4": { "": "src/" }
+	}
+}
