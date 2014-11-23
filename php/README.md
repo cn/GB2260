@@ -5,7 +5,7 @@ The latest GB/T 2260 codes. Updated at 2013, published at 2014.
 ## Installation
 
 Install with Packagist:
-```php
+```
     $ composer install cn/gb2260
 ```
 
@@ -14,7 +14,7 @@ Install with Packagist:
 Get data of GB/T 2260-2013.
 
 ```php
-var_dump(GB2260::$data);
+var_dump(GB2260::getData());
 ```
 
 ### .parse(code)
