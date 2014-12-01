@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
-import re
 from setuptools import setup
 
 
@@ -10,16 +8,9 @@ def fread(filepath):
         return f.read()
 
 
-def version():
-    content = fread('gb2260/__init__.py')
-    pattern = r"__version__ = '([0-9\.]*)'"
-    m = re.findall(pattern, content)
-    return m[0]
-
-
 setup(
     name='GB2260',
-    version=version(),
+    version='0.1.0',
     author='Hsiaoming Yang',
     author_email='me@lepture.com',
     url='https://github.com/cn/GB2260',
