@@ -15,7 +15,8 @@ setup(
     author_email='me@lepture.com',
     url='https://github.com/cn/GB2260',
     packages=['gb2260'],
-    description='',
+    description='The Python implementation for looking up the Chinese '
+                'administrative divisions.',
     long_description=fread('README.rst'),
     license='BSD',
     include_package_data=True,
