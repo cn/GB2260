@@ -4,5 +4,6 @@
 data.py
 __pycache__
 
+/.tox
 /build
 /dist
