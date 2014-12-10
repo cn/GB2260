@@ -11,8 +11,8 @@ def fread(filepath):
 setup(
     name='GB2260',
     version='0.1.0',
-    author='Hsiaoming Yang',
-    author_email='me@lepture.com',
+    author='TonySeek',
+    author_email='tonyseek@gmail.com',
     url='https://github.com/cn/GB2260',
     packages=['gb2260'],
     description='The Python implementation for looking up the Chinese '
