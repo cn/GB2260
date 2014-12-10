@@ -11,7 +11,7 @@ def fread(filepath):
 setup(
     name='GB2260',
     version='0.1.0',
-    author='TonySeek',
+    author='Jiangge Zhang',
     author_email='tonyseek@gmail.com',
     url='https://github.com/cn/GB2260',
     packages=['gb2260'],
