@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 
-from pytest import mark
+from pytest import mark, raises
 
 from gb2260 import Division, get
 
@@ -24,6 +24,7 @@ def test_division(code, stack_name, is_province, is_prefecture, is_county):
 def test_comparable():
     assert get(110101) == Division(110101, u'东城区')
     assert get(110101) != Division(110000, u'北京市')
+    assert get(110101, year=2006) != Division(110101, u'东城区')
 
 
 def test_hashable():
@@ -31,8 +32,22 @@ def test_hashable():
         Division(110101, u'东城区'),
         Division(110000, u'北京市'),
         Division(110101, u'东城区'),
+        Division(110101, u'东城区', 2006),
     ])
     assert division_set == set([
         Division(110101, u'东城区'),
         Division(110000, u'北京市'),
+        Division(110101, u'东城区', 2006),
     ])
+
+
+def test_history_data():
+    get(522401, year=2010) == Division(522401, u'毕节市', 2010)
+
+    with raises(ValueError) as error:
+        get(522401)
+    assert error.value.args[0] == '522401 is not valid division code'
+
+    with raises(ValueError) as error:
+        get(110101, 2000)
+    assert error.value.args[0].startswith('year must be in')

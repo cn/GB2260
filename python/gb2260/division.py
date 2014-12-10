@@ -10,7 +10,8 @@ from ._compat import unicode_compatible, unicode_type
 class Division(object):
     """The administrative divison."""
 
-    _identity_map = {year: weakref.WeakValueDictionary() for year in data}
+    _identity_map = dict(
+        (year, weakref.WeakValueDictionary()) for year in data)
 
     def __init__(self, code, name, year=None):
         self.code = unicode_type(code)
@@ -40,7 +41,7 @@ class Division(object):
     def get(cls, code, year=None):
         key = int(code)
         if year and year not in data:
-            raise ValueError('year must in %r' % list(data))
+            raise ValueError('year must be in %r' % list(data))
 
         cache = cls._identity_map[year]
         store = data[year]
