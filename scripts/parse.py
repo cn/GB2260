@@ -3,8 +3,8 @@
 from __future__ import print_function
 
 import os
-import sys
 import re
+import sys
 
 import requests
 from lxml.html import fromstring
@@ -12,14 +12,14 @@ from lxml.html import fromstring
 
 URL_BASE = 'http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/'
 URL_LIST = [
-    ('', URL_BASE + '201401/t20140116_501070.html'),  # latest: 2013
-    ('-2012', URL_BASE + '201301/t20130118_38316.html'),
-    ('-2011', URL_BASE + '201201/t20120105_38315.html'),
-    ('-2010', URL_BASE + '201107/t20110726_38314.html'),
-    ('-2009', URL_BASE + '201006/t20100623_38313.html'),
-    ('-2008', URL_BASE + '200906/t20090626_38312.html'),
-    ('-2007', URL_BASE + '200802/t20080215_38311.html'),
-    ('-2006', URL_BASE + '200704/t20070411_38310.html'),
+    ('', '201401/t20140116_501070.html'),  # latest: 2013
+    ('-2012', '201301/t20130118_38316.html'),
+    ('-2011', '201201/t20120105_38315.html'),
+    ('-2010', '201107/t20110726_38314.html'),
+    ('-2009', '201006/t20100623_38313.html'),
+    ('-2008', '200906/t20090626_38312.html'),
+    ('-2007', '200802/t20080215_38311.html'),
+    ('-2006', '200704/t20070411_38310.html'),
 ]
 
 XPATH_EXPRS = [
@@ -57,7 +57,7 @@ def main():
         sys.exit(0)
 
     for suffix, url in URL_LIST:
-        req = requests.get(url)
+        req = requests.get(URL_BASE + url)
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
