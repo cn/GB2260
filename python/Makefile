@@ -1,11 +1,14 @@
 PYTHON := python
 
-.PHONY: all build
+.PHONY: all build clean
 
 all: build
 
 build: gb2260/data.py
 	$(PYTHON) setup.py sdist bdist_wheel
 
-gb2260/data.py: ../GB2260.txt
-	$(PYTHON) generate.py $< $@
+clean:
+	rm -rf dist build gb2260/data.py
+
+gb2260/data.py: ../GB2260*.txt
+	$(PYTHON) generate.py $? $@
