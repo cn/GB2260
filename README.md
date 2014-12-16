@@ -1,10 +1,14 @@
-# 最新县及县以上行政区划代码
+# 县及县以上行政区划代码
 
-GB/T 2260-2013，2013年8月31日
+中华人民共和国国家标准 GB/T 2260 行政区划代码
 
-数据来源： <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html>
+数据来源： <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/>
 
 你可以利用国家标准数据构建自己项目的数据库。
+
+## 语言实现
+
+1. [GB2260-python](https://github.com/cn/GB2260-python)
 
 ## 如何贡献
 
