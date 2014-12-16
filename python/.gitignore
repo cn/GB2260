@@ -1,9 +1,0 @@
-*.pyc
-*.pyo
-*.egg-info
-data.py
-__pycache__
-
-/.tox
-/build
-/dist
