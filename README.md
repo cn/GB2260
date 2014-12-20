@@ -1,6 +1,8 @@
 # 县及县以上行政区划代码
 
-![GB/T 2260](http://img.shields.io/badge/GB%2FT-2260-blue.svg?style=flat)
+[![GB/T 2260](http://img.shields.io/badge/GB%2FT-2260-blue.svg?style=flat)](https://github.com/cn/GB2260)
+[![PyPI Release](https://img.shields.io/pypi/v/GB2260.svg?style=flat)](https://pypi.python.org/pypi/GB2260)
+[![NPM Release](https://img.shields.io/npm/v/gb2260.svg?style=flat)](https://npmjs.org/package/gb2260)
 
 中华人民共和国国家标准 GB/T 2260 行政区划代码
 
