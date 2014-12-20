@@ -1,5 +1,7 @@
 # 县及县以上行政区划代码
 
+![GB/T 2260](http://img.shields.io/badge/GB%2FT-2260-blue.svg?style=flat)
+
 中华人民共和国国家标准 GB/T 2260 行政区划代码
 
 数据来源： <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/>
@@ -8,7 +10,9 @@
 
 ## 语言实现
 
-1. [GB2260-python](https://github.com/cn/GB2260-python)
+1. [Python](https://github.com/cn/GB2260.py)
+2. [JavaScript](https://github.com/cn/GB2260.js)
+3. [PHP](https://github.com/cn/GB2260.php)
 
 ## 如何贡献
 
