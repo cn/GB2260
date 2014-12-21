@@ -16,23 +16,21 @@
 
 ### Python
 
-<https://github.com/cn/GB2260.py>
+Repository: <https://github.com/cn/GB2260.py>
 
 [![Build Status](https://img.shields.io/travis/cn/GB2260.py.svg?style=flat)](https://travis-ci.org/cn/GB2260.py)
 [![Coverage](https://img.shields.io/coveralls/cn/GB2260.py.svg?style=flat)](https://coveralls.io/r/cn/GB2260.py)
-[![Release](https://img.shields.io/pypi/v/GB2260.svg?style=flat)](https://pypi.python.org/pypi/GB2260)
 
 ### JavaScript
 
-<https://github.com/cn/GB2260.js>
+Repository: <https://github.com/cn/GB2260.js>
 
 [![Build Status](https://img.shields.io/travis/cn/GB2260.js.svg?style=flat)](https://travis-ci.org/cn/GB2260.js)
 [![Coverage](https://img.shields.io/coveralls/cn/GB2260.js.svg?style=flat)](https://coveralls.io/r/cn/GB2260.js)
-[![Release](https://img.shields.io/npm/v/gb2260.svg?style=flat)](https://npmjs.org/package/gb2260)
 
 ### PHP
 
-<https://github.com/cn/GB2260.php>
+Repository: <https://github.com/cn/GB2260.php>
 
 
 ## 如何贡献
