@@ -1,6 +1,6 @@
 # Specification
 
-Implement in your favorate languages by following this specification.
+Implement in your favorite languages by following this specification.
 
 * Date: 2015-09-07
 * Authors: Hsiaoming Yang, Jiangge Zhang
