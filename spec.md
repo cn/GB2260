@@ -68,7 +68,7 @@ A description of current division. e.g.
 
 ## Methods
 
-Methods the interface **GB2260** MUST have. Create a new instance:
+The interface MUST have a constructor method to create a new instance:
 
 ```
 gb2260 = new GB2260(year)
