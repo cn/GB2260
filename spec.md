@@ -2,6 +2,10 @@
 
 Implement in your favorate languages by following this specification.
 
+* Date: 2015-09-07
+* Authors: Hsiaoming Yang, Jiangge Zhang
+
+
 ## Interface
 
 Namespace should always be **GB2260**.
