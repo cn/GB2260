@@ -64,7 +64,7 @@ A description of current division. e.g.
 
 ## Methods
 
-Methods the interface **GB2260** MUST contains.
+Methods the interface **GB2260** MUST have.
 
 ### `GB2260(year).get(code)`
 
