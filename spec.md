@@ -45,6 +45,23 @@ division codes `XX0000` (`XX` is non-zero digits) mean provinces. And there are
 }
 ```
 
+### .province
+
+Return province level division of current division.
+
+### .prefecture
+
+Return prefecture level division of current division. If current division is a province,
+return none/null/nil.
+
+### .description
+
+A description of current division. e.g.
+
+```
+北京市 市辖区 崇文区
+```
+
 ## Methods
 
 Methods the interface **GB2260** MUST contains.
