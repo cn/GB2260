@@ -64,11 +64,18 @@ A description of current division. e.g.
 
 ## Methods
 
-Methods the interface **GB2260** MUST have.
+Methods the interface **GB2260** MUST have. Create a new instance:
 
-### `GB2260(year).get(code)`
+```
+gb2260 = new GB2260(year)
+```
 
-Return the division of the given code. If `year` is not specified, use the latest data.
+If `year` is not specified, use the latest data.
+
+
+### `.get(code)`
+
+Return the division of the given code.
 
 ```javascript
 GB2260().get(110103)
@@ -82,12 +89,12 @@ GB2260().get(110103)
 ```
 
 
-### `GB2260(year).provinces()` 省
+### `.provinces()` 省
 
 Return a list of provinces in `Division` data structure.
 
 
-### `GB2260(year).prefectures(province_code)` 地级市
+### `.prefectures(province_code)` 地级市
 
 Return a list of prefecture level cities in `Division` data structure.
 
@@ -97,7 +104,7 @@ A `province_code` is a 6-length province code. It can also be:
 * 4-length code that endswith `00`
 
 
-### `GB2260(year).counties(prefecture_code)` 县
+### `.counties(prefecture_code)` 县
 
 Return a list of counties in `Division` data structure.
 
