@@ -71,18 +71,18 @@ A description of current division. e.g.
 The interface MUST have a constructor method to create a new instance:
 
 ```
-gb2260 = new GB2260(year)
+gb2260 = new GB2260(str year)
 ```
 
 If `year` is not specified, use the latest data.
 
 
-### `.get(code)`
+### `.get(str code)`
 
 Return the division of the given code.
 
 ```javascript
-gb2260.get(110103)
+gb2260.get("110103")
 
 // =>
 {
@@ -98,7 +98,7 @@ gb2260.get(110103)
 Return a list of provinces in `Division` data structure.
 
 
-### `.prefectures(province_code)` 地级市
+### `.prefectures(str province_code)` 地级市
 
 Return a list of prefecture level cities in `Division` data structure.
 
@@ -108,8 +108,14 @@ A `province_code` is a 6-length province code. It can also be:
 * 4-length code that endswith `00`
 
 
-### `.counties(prefecture_code)` 县
+### `.counties(str prefecture_code)` 县
 
 Return a list of counties in `Division` data structure.
 
 A `prefecture_code` is a 6-length code that endswith `00`. It can also be a 4-length code.
+
+
+## Additional Information
+
+The `code` value is always a string. In weak typed languages, the parameter for `code`,
+`province_code` and `prefecture_code` can also be int.
