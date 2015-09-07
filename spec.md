@@ -82,7 +82,7 @@ If `year` is not specified, use the latest data.
 Return the division of the given code.
 
 ```javascript
-GB2260().get(110103)
+gb2260.get(110103)
 
 // =>
 {
