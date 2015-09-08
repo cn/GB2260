@@ -30,7 +30,7 @@ For example, a county of Beijing in JavaScript is defined like this:
 ```
 
 The administrative level representation depends on recursion records. The
-division codes `XX0000` (`XX` is non-zero digits) mean provinces. And there are
+division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 `XXXX00` for prefectures and `XXXXXX` for counties.
 
 ```javascript
