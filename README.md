@@ -18,7 +18,7 @@ Repository: <https://github.com/cn/GB2260.py>
 
 [![Build Status](https://travis-ci.org/cn/GB2260.py.svg?branch=master)](https://travis-ci.org/cn/GB2260.py)
 [![Coverage Status](https://coveralls.io/repos/cn/GB2260.py/badge.svg?branch=master&service=github)](https://coveralls.io/github/cn/GB2260.py?branch=master)
-[![PyPI Release](https://img.shields.io/pypi/v/GB2260.svg?style=flat)](https://pypi.python.org/pypi/GB2260)
+[![PyPI Release](https://badge.fury.io/py/gb2260.svg)](https://pypi.python.org/pypi/GB2260)
 
 ### JavaScript
 
