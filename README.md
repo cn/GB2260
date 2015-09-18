@@ -16,17 +16,26 @@
 
 Repository: <https://github.com/cn/GB2260.py>
 
-[![Build Status](https://img.shields.io/travis/cn/GB2260.py.svg?style=flat)](https://travis-ci.org/cn/GB2260.py)
-[![Coverage](https://img.shields.io/coveralls/cn/GB2260.py.svg?style=flat)](https://coveralls.io/r/cn/GB2260.py)
+[![Build Status](https://travis-ci.org/cn/GB2260.py.svg?branch=master)](https://travis-ci.org/cn/GB2260.py)
+[![Coverage Status](https://coveralls.io/repos/cn/GB2260.py/badge.svg?branch=master&service=github)](https://coveralls.io/github/cn/GB2260.py?branch=master)
 [![PyPI Release](https://img.shields.io/pypi/v/GB2260.svg?style=flat)](https://pypi.python.org/pypi/GB2260)
 
 ### JavaScript
 
 Repository: <https://github.com/cn/GB2260.js>
 
-[![Build Status](https://img.shields.io/travis/cn/GB2260.js.svg?style=flat)](https://travis-ci.org/cn/GB2260.js)
-[![Coverage](https://img.shields.io/coveralls/cn/GB2260.js.svg?style=flat)](https://coveralls.io/r/cn/GB2260.js)
-[![NPM Release](https://img.shields.io/npm/v/gb2260.svg?style=flat)](https://npmjs.org/package/gb2260)
+[![Build Status](https://travis-ci.org/cn/GB2260.py.svg?branch=master)](https://travis-ci.org/cn/GB2260.js)
+[![Coverage Status](https://coveralls.io/repos/cn/GB2260.js/badge.svg?branch=master&service=github)](https://coveralls.io/github/cn/GB2260.js?branch=master)
+[![NPM Release](https://badge.fury.io/js/gb2260.svg)](https://npmjs.org/package/gb2260)
+
+### Ruby
+
+Repository: <https://github.com/wolflee/GB2260.rb>
+
+[![Gem Version](https://badge.fury.io/rb/GB2260.svg)](http://badge.fury.io/rb/GB2260)
+[![Build Status](https://travis-ci.org/wolflee/GB2260.rb.svg?branch=master)](https://travis-ci.org/wolflee/GB2260.rb)
+[![Code Climate](https://codeclimate.com/github/wolflee/GB2260.rb/badges/gpa.svg)](https://codeclimate.com/github/wolflee/GB2260.rb)
+[![Coverage Status](https://coveralls.io/repos/wolflee/GB2260.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/wolflee/GB2260.rb?branch=master)
 
 ### PHP
 
