@@ -18,15 +18,15 @@ should be included in it.
 
 - `code`: (str) The six-digit number of the specific administrative division.
 - `name`: (str) The Chinese name of the specific administrative division.
-- `revision`: (str) Optional. The revision year, and empty means "latest".
+- `revision`: (str) The revision year (month).
 
 For example, a county of Beijing in JavaScript is defined like this:
 
 ```javascript
 {
-  "code": "110103",
-  "name": "崇文区",
-  "revision": "2003"
+  "code": "110105",
+  "name": "朝阳区",
+  "revision": "2014"
 }
 ```
 
@@ -38,7 +38,7 @@ division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 {
   "code": "110100",
   "name": "市辖区",
-  "revision": null
+  "revision": "2014"
 }
 ```
 
@@ -46,7 +46,7 @@ division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 {
   "code": "110000",
   "name": "北京市",
-  "revision": null
+  "revision": "2014"
 }
 ```
 
@@ -83,13 +83,13 @@ If `revision` is not specified, use the latest data.
 Return the division of the given code.
 
 ```javascript
-gb2260.get("110103")
+gb2260.get("110105")
 
 // =>
 {
-  "code": "110103",
-  "name": "崇文区",
-  "revision": null
+  "code": "110105",
+  "name": "朝阳区",
+  "revision": "2014"
 }
 ```
 
