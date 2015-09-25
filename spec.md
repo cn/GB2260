@@ -116,9 +116,9 @@ Return a list of counties in `Division` data structure.
 A `prefecture_code` is a 6-length code that endswith `00`. It can also be a 4-length code.
 
 
-### `#revisions`
+### `#revisions()`
 
-List all revisions supported by GB2260. This is a module(class) constant.
+List all revisions supported by GB2260 in descendant.
 
 
 ## Additional Information
