@@ -121,14 +121,6 @@ A `prefecture_code` is a 6-length code that endswith `00`. It can also be a 4-le
 List all revisions supported by GB2260. This is a module(class) constant.
 
 
-### `#search(code, str[] revisions)`
-
-This module(class) method is optional. `str[] revisions` paramter is optional,
-if not specified, all revisions are used.
-
-Search the given code in the givent revisions.
-
-
 ## Additional Information
 
 The `code` value is always a string. In weak typed languages, the parameter for `code`,
