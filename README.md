@@ -42,6 +42,11 @@ Repository: <https://github.com/wolflee/GB2260.rb>
 Repository: <https://github.com/cn/GB2260.php>
 
 
+### Go
+
+Repository: <https://github.com/damonchen/gb2260>
+
+
 ## 如何贡献
 
 创建你熟悉的语言的模块，请务必使用 MIT/BSD/WTFPL 授权。
