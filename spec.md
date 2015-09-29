@@ -2,7 +2,8 @@
 
 Implement in your favorite languages by following this specification.
 
-* Date: 2015-09-07
+* Version: 0.2
+* Date: 2015-09-23
 * Authors: Hsiaoming Yang, Jiangge Zhang
 
 
@@ -17,15 +18,15 @@ should be included in it.
 
 - `code`: (str) The six-digit number of the specific administrative division.
 - `name`: (str) The Chinese name of the specific administrative division.
-- `year`: (str) Optional. The revision year, and empty means "latest".
+- `revision`: (str) The revision year (month).
 
 For example, a county of Beijing in JavaScript is defined like this:
 
 ```javascript
 {
-  "code": "110103",
-  "name": "崇文区",
-  "year": "2003"
+  "code": "110105",
+  "name": "朝阳区",
+  "revision": "2014"
 }
 ```
 
@@ -37,7 +38,7 @@ division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 {
   "code": "110100",
   "name": "市辖区",
-  "year": null
+  "revision": "2014"
 }
 ```
 
@@ -45,7 +46,7 @@ division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 {
   "code": "110000",
   "name": "北京市",
-  "year": null
+  "revision": "2014"
 }
 ```
 
@@ -71,10 +72,10 @@ A description of current division. e.g.
 The interface MUST have a constructor method to create a new instance:
 
 ```
-gb2260 = new GB2260(str year)
+gb2260 = new GB2260(str revision)
 ```
 
-If `year` is not specified, use the latest data.
+If `revision` is not specified, use the latest data.
 
 
 ### `.get(str code)`
@@ -82,13 +83,13 @@ If `year` is not specified, use the latest data.
 Return the division of the given code.
 
 ```javascript
-gb2260.get("110103")
+gb2260.get("110105")
 
 // =>
 {
-  "code": "110103",
-  "name": "崇文区",
-  "year": null
+  "code": "110105",
+  "name": "朝阳区",
+  "revision": "2014"
 }
 ```
 
@@ -113,6 +114,11 @@ A `province_code` is a 6-length province code. It can also be:
 Return a list of counties in `Division` data structure.
 
 A `prefecture_code` is a 6-length code that endswith `00`. It can also be a 4-length code.
+
+
+### `#revisions()`
+
+List all revisions supported by GB2260 in descendant.
 
 
 ## Additional Information
