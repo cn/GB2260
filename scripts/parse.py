@@ -98,7 +98,7 @@ def main():
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
-        dirname = os.path.join(sys.argv[1], 'GB2260-%s.txt' % suffix)
+        dirname = os.path.join(sys.argv[1], '%s.txt' % suffix)
         print('--> %s' % dirname, file=sys.stderr)
 
         with open(dirname, 'w') as dest_file:
