@@ -8,6 +8,17 @@
 
 你可以利用国家标准数据构建自己项目的数据库。
 
+## Badges
+
+Badges with spec versions:
+
+![Spec v0.2](https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg)
+
+```
+https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg
+```
+
+
 ## 语言实现
 
 目前已有的语言实现
