@@ -12,10 +12,11 @@
 
 Badges with spec versions:
 
-![Spec v0.2](https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg)
+[![Spec v0.2](https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg)](https://github.com/cn/GB2260/blob/v0.2/spec.md)
 
 ```
-https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg
+Badge: https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg
+Link: https://github.com/cn/GB2260/blob/v0.2/spec.md
 ```
 
 
