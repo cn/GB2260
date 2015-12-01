@@ -48,6 +48,14 @@ Repository: <https://github.com/cn/GB2260.rb>
 [![Coverage Status](https://coveralls.io/repos/cn/GB2260.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/cn/GB2260.rb?branch=master)
 [![Gem Version](https://badge.fury.io/rb/GB2260.svg)](http://badge.fury.io/rb/GB2260)
 
+### Java
+
+Repository: <https://github.com/cn/GB2260.java>
+
+[![Build Status](https://travis-ci.org/cn/GB2260.java.svg?branch=master)](https://travis-ci.org/cn/GB2260.java)
+[![Coverage Status](https://coveralls.io/repos/cn/GB2260.java/badge.svg?branch=master&service=github)](https://coveralls.io/github/cn/GB2260.java?branch=master)
+
+
 ### PHP
 
 Repository: <https://github.com/cn/GB2260.php>
