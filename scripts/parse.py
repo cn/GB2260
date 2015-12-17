@@ -14,24 +14,24 @@ from lxml.html import fromstring
 
 URL_BASE = 'http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/'
 URL_LIST = [
-    # (year, url, is_mass)
-    (2014, '201504/t20150415_712722.html', False),
-    (2013, '201401/t20140116_501070.html', False),
-    (2012, '201301/t20130118_38316.html', False),
-    (2011, '201201/t20120105_38315.html', False),
-    (2010, '201107/t20110726_38314.html', False),
-    (2009, '201006/t20100623_38313.html', False),
-    (2008, '200906/t20090626_38312.html', False),
-    (2007, '200802/t20080215_38311.html', False),
-    (2006, '200704/t20070411_38310.html', False),
-    (2005, '200410/t20041022_38307.html', True),
+    # (revision, url, is_mass)
+    (201410, '201504/t20150415_712722.html', False),
+    (201308, '201401/t20140116_501070.html', False),
+    (201210, '201301/t20130118_38316.html', False),
+    (201110, '201201/t20120105_38315.html', False),
+    (201010, '201107/t20110726_38314.html', False),
+    (200912, '201006/t20100623_38313.html', False),
+    (200812, '200906/t20090626_38312.html', False),
+    (200712, '200802/t20080215_38311.html', False),
+    (200612, '200704/t20070411_38310.html', False),
+    (200512, '200410/t20041022_38307.html', True),
     (200506, '200410/t20041022_38306.html', True),
-    (2004, '200410/t20041022_38305.html', True),
+    (200412, '200410/t20041022_38305.html', True),
     (200409, '200410/t20041022_38304.html', True),
     (200403, '200406/t20040607_38302.html', True),
-    (2003, '200402/t20040211_38301.html', True),
+    (200312, '200402/t20040211_38301.html', True),
     (200306, '200307/t20030722_38300.html', True),
-    (2002, '200302/t20030219_38299.html', True),
+    (200212, '200302/t20030219_38299.html', True),
 ]
 
 XPATH_EXPRS = [
@@ -41,6 +41,8 @@ XPATH_EXPRS = [
 XPATH_MASS_EXPRS = [
     './/p[@class="MsoNormal"]//span//text()',
 ]
+
+SAC = [200212, 200712]
 
 
 def strip_spaces_in_chinese_words(line):
@@ -93,15 +95,20 @@ def main():
         print('Usage: %s [dir]' % sys.argv[0], file=sys.stderr)
         sys.exit(0)
 
-    for suffix, url, is_mass in URL_LIST:
+    for revision, url, is_mass in URL_LIST:
         req = requests.get(URL_BASE + url)
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
-        dirname = os.path.join(sys.argv[1], '%s.txt' % suffix)
+        dirname = os.path.join(sys.argv[1], '%s.tsv' % revision)
         print('--> %s' % dirname, file=sys.stderr)
 
+        source = 'stats'
+        if revision in SAC:
+            source = 'sac'
+
         with open(dirname, 'w') as dest_file:
+            print(b'Source\tRevision\tCode\tName', file=dest_file)
             for line in iter_lines(el, is_mass):
                 text = strip_spaces_in_chinese_words(strip_comments(line))
                 if not text:
@@ -113,7 +120,7 @@ def main():
                 except ValueError:
                     print('ignored: %s' % text, file=sys.stderr)
                 else:
-                    out = '%s\t%s' % (code, name)
+                    out = '%s\t%s\t%s\t%s' % (source, revision, code, name)
                     print(out.encode('utf-8'), file=dest_file)
 
 
