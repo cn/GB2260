@@ -15,23 +15,23 @@ from lxml.html import fromstring
 URL_BASE = 'http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/'
 URL_LIST = [
     # (revision, url, is_mass)
-    (201410, '201504/t20150415_712722.html', False),
-    (201308, '201401/t20140116_501070.html', False),
-    (201210, '201301/t20130118_38316.html', False),
-    (201110, '201201/t20120105_38315.html', False),
-    (201010, '201107/t20110726_38314.html', False),
-    (200912, '201006/t20100623_38313.html', False),
-    (200812, '200906/t20090626_38312.html', False),
-    (200712, '200802/t20080215_38311.html', False),
-    (200612, '200704/t20070411_38310.html', False),
-    (200512, '200410/t20041022_38307.html', True),
-    (200506, '200410/t20041022_38306.html', True),
-    (200412, '200410/t20041022_38305.html', True),
-    (200409, '200410/t20041022_38304.html', True),
-    (200403, '200406/t20040607_38302.html', True),
-    (200312, '200402/t20040211_38301.html', True),
-    (200306, '200307/t20030722_38300.html', True),
-    (200212, '200302/t20030219_38299.html', True),
+    ('201410', '201504/t20150415_712722.html', False),
+    ('201308', '201401/t20140116_501070.html', False),
+    ('201210', '201301/t20130118_38316.html', False),
+    ('201110', '201201/t20120105_38315.html', False),
+    ('201010', '201107/t20110726_38314.html', False),
+    ('200912', '201006/t20100623_38313.html', False),
+    ('200812', '200906/t20090626_38312.html', False),
+    ('200712', '200802/t20080215_38311.html', False),
+    ('200612', '200704/t20070411_38310.html', False),
+    ('200512', '200410/t20041022_38307.html', True),
+    ('200506', '200410/t20041022_38306.html', True),
+    ('200412', '200410/t20041022_38305.html', True),
+    ('200409', '200410/t20041022_38304.html', True),
+    ('200403', '200406/t20040607_38302.html', True),
+    ('200312', '200402/t20040211_38301.html', True),
+    ('200306', '200307/t20030722_38300.html', True),
+    ('200212', '200302/t20030219_38299.html', True),
 ]
 
 XPATH_EXPRS = [
@@ -42,7 +42,7 @@ XPATH_MASS_EXPRS = [
     './/p[@class="MsoNormal"]//span//text()',
 ]
 
-SAC = [200212, 200712]
+GB = ['200212', '200712']
 
 
 def strip_spaces_in_chinese_words(line):
@@ -104,8 +104,8 @@ def main():
         print('--> %s' % dirname, file=sys.stderr)
 
         source = 'stats'
-        if revision in SAC:
-            source = 'sac'
+        if revision in GB:
+            source = 'gb'
 
         with open(dirname, 'w') as dest_file:
             print(b'Source\tRevision\tCode\tName', file=dest_file)
