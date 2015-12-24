@@ -67,6 +67,10 @@ Repository: <https://github.com/cn/GB2260.php>
 
 Repository: <https://github.com/damonchen/gb2260>
 
+### Elixir
+
+Repository: <https://github.com/cn/GB2260.ex>
+
 
 ## 如何贡献
 
