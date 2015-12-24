@@ -1,7 +1,6 @@
 # 县及县以上行政区划代码
 
-[![Join the chat at https://gitter.im/cn/GB2260](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cn/GB2260?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+[![Join the chat at https://gitter.im/cn/GB2260](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cn/GB2260)
 [![GB/T 2260](http://img.shields.io/badge/GB%2FT-2260-blue.svg?style=flat)](spec.md)
 
 中华人民共和国国家标准 GB/T 2260 行政区划代码
