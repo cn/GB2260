@@ -64,7 +64,7 @@ Repository: <https://github.com/cn/GB2260.php>
 
 ### Go
 
-Repository: <https://github.com/damonchen/gb2260>
+Repository: <https://github.com/cn/GB2260.go>
 
 ### Elixir
 
