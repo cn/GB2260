@@ -3,37 +3,15 @@
 
 from __future__ import print_function
 
+import csv
 import os
 import re
 import sys
-import urlparse
 import itertools
 
 import requests
 from lxml.html import fromstring
 
-
-URL_BASE = 'http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/'
-URL_LIST = [
-    # (revision, url, schema)
-    ('201410', '201504/t20150415_712722.html', 'stats'),
-    ('201308', '201401/t20140116_501070.html', 'stats'),
-    ('201210', '201301/t20130118_38316.html', 'stats'),
-    ('201110', '201201/t20120105_38315.html', 'stats'),
-    ('201010', '201107/t20110726_38314.html', 'stats'),
-    ('200912', '201006/t20100623_38313.html', 'stats'),
-    ('200812', '200906/t20090626_38312.html', 'stats'),
-    ('200712', '200802/t20080215_38311.html', 'stats'),
-    ('200612', '200704/t20070411_38310.html', 'stats'),
-    ('200512', '200410/t20041022_38307.html', 'stats-mass'),
-    ('200506', '200410/t20041022_38306.html', 'stats-mass'),
-    ('200412', '200410/t20041022_38305.html', 'stats-mass'),
-    ('200409', '200410/t20041022_38304.html', 'stats-mass'),
-    ('200403', '200406/t20040607_38302.html', 'stats-mass'),
-    ('200312', '200402/t20040211_38301.html', 'stats-mass'),
-    ('200306', '200307/t20030722_38300.html', 'stats-mass'),
-    ('200212', '200302/t20030219_38299.html', 'stats-mass'),
-]
 
 XPATH_EXPRS = [
     './/div[@class="xilan_con"]//tbody/tr',
@@ -41,6 +19,9 @@ XPATH_EXPRS = [
 ]
 XPATH_MASS_EXPRS = [
     './/p[@class="MsoNormal"]//span//text()',
+]
+XPATH_MCA_EXPRS = [
+    './/tr',
 ]
 
 GB = ['200212', '200712']
@@ -61,10 +42,24 @@ def iter_lines(element, schema):
     handlers = {
         'stats': iter_lines_of_normal_document,
         'stats-mass': iter_lines_of_mass_document,
+        'mca': iter_lines_of_mca_document,
     }
-    handler = handlers.get(schema, iter_lines_of_normal_document)
+    assert schema in handlers, 'Schema not found'
+    handler = handlers[schema]
     for line in handler(element):
         yield line
+
+
+def iter_lines_of_mca_document(element):
+    for xpath in XPATH_MCA_EXPRS:
+        line_elements = element.xpath(xpath)
+        for el in line_elements:
+            fragments = el.xpath('.//text()')
+            if any(child.tag == 'br' for child in el.getchildren()):
+                for fragment in fragments:
+                    yield fragment
+            else:
+                yield u' '.join(fragments)
 
 
 def iter_lines_of_normal_document(element):
@@ -97,19 +92,25 @@ def predict(iterable):
 
 
 def main():
-    if len(sys.argv) != 2:
-        print('Usage: %s [dir]' % sys.argv[0], file=sys.stderr)
+    if len(sys.argv) != 3:
+        print('Usage: %s [sources] [dir]' % sys.argv[0], file=sys.stderr)
         sys.exit(0)
 
-    for revision, url, schema in URL_LIST:
-        req = requests.get(urlparse.urljoin(URL_BASE, url))
+    with open(sys.argv[1], 'r') as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        url_list = [
+            (line['Source'], line['Revision'], line['URL'], line['Schema'])
+            for line in reader
+        ]
+
+    for source, revision, url, schema in url_list:
+        req = requests.get(url)
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
-        dirname = os.path.join(sys.argv[1], '%s.tsv' % revision)
+        dirname = os.path.join(sys.argv[2], '%s.tsv' % revision)
         print('--> %s' % dirname, file=sys.stderr)
 
-        source = 'stats'
         if revision in GB:
             source = 'gb'
 
