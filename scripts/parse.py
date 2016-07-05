@@ -6,6 +6,7 @@ from __future__ import print_function
 import os
 import re
 import sys
+import urlparse
 import itertools
 
 import requests
@@ -14,24 +15,24 @@ from lxml.html import fromstring
 
 URL_BASE = 'http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/'
 URL_LIST = [
-    # (revision, url, is_mass)
-    ('201410', '201504/t20150415_712722.html', False),
-    ('201308', '201401/t20140116_501070.html', False),
-    ('201210', '201301/t20130118_38316.html', False),
-    ('201110', '201201/t20120105_38315.html', False),
-    ('201010', '201107/t20110726_38314.html', False),
-    ('200912', '201006/t20100623_38313.html', False),
-    ('200812', '200906/t20090626_38312.html', False),
-    ('200712', '200802/t20080215_38311.html', False),
-    ('200612', '200704/t20070411_38310.html', False),
-    ('200512', '200410/t20041022_38307.html', True),
-    ('200506', '200410/t20041022_38306.html', True),
-    ('200412', '200410/t20041022_38305.html', True),
-    ('200409', '200410/t20041022_38304.html', True),
-    ('200403', '200406/t20040607_38302.html', True),
-    ('200312', '200402/t20040211_38301.html', True),
-    ('200306', '200307/t20030722_38300.html', True),
-    ('200212', '200302/t20030219_38299.html', True),
+    # (revision, url, schema)
+    ('201410', '201504/t20150415_712722.html', 'stats'),
+    ('201308', '201401/t20140116_501070.html', 'stats'),
+    ('201210', '201301/t20130118_38316.html', 'stats'),
+    ('201110', '201201/t20120105_38315.html', 'stats'),
+    ('201010', '201107/t20110726_38314.html', 'stats'),
+    ('200912', '201006/t20100623_38313.html', 'stats'),
+    ('200812', '200906/t20090626_38312.html', 'stats'),
+    ('200712', '200802/t20080215_38311.html', 'stats'),
+    ('200612', '200704/t20070411_38310.html', 'stats'),
+    ('200512', '200410/t20041022_38307.html', 'stats-mass'),
+    ('200506', '200410/t20041022_38306.html', 'stats-mass'),
+    ('200412', '200410/t20041022_38305.html', 'stats-mass'),
+    ('200409', '200410/t20041022_38304.html', 'stats-mass'),
+    ('200403', '200406/t20040607_38302.html', 'stats-mass'),
+    ('200312', '200402/t20040211_38301.html', 'stats-mass'),
+    ('200306', '200307/t20030722_38300.html', 'stats-mass'),
+    ('200212', '200302/t20030219_38299.html', 'stats-mass'),
 ]
 
 XPATH_EXPRS = [
@@ -56,12 +57,17 @@ def strip_comments(line):
     return line.strip('*() \n\t\r').strip()
 
 
-def iter_lines(element, is_mass):
-    if is_mass:
-        for line in iter_lines_of_mass_document(element):
-            yield line
-        return
+def iter_lines(element, schema):
+    handlers = {
+        'stats': iter_lines_of_normal_document,
+        'stats-mass': iter_lines_of_mass_document,
+    }
+    handler = handlers.get(schema, iter_lines_of_normal_document)
+    for line in handler(element):
+        yield line
 
+
+def iter_lines_of_normal_document(element):
     for xpath in XPATH_EXPRS:
         line_elements = element.xpath(xpath)
         for el in line_elements:
@@ -95,8 +101,8 @@ def main():
         print('Usage: %s [dir]' % sys.argv[0], file=sys.stderr)
         sys.exit(0)
 
-    for revision, url, is_mass in URL_LIST:
-        req = requests.get(URL_BASE + url)
+    for revision, url, schema in URL_LIST:
+        req = requests.get(urlparse.urljoin(URL_BASE, url))
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
@@ -109,7 +115,7 @@ def main():
 
         with open(dirname, 'w') as dest_file:
             print(b'Source\tRevision\tCode\tName', file=dest_file)
-            for line in iter_lines(el, is_mass):
+            for line in iter_lines(el, schema):
                 text = strip_spaces_in_chinese_words(strip_comments(line))
                 if not text:
                     continue
