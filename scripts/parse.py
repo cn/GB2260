@@ -108,13 +108,17 @@ def main():
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
-        dirname = os.path.join(sys.argv[2], '%s.tsv' % revision)
-        print('--> %s' % dirname, file=sys.stderr)
+        dirname = os.path.join(sys.argv[2], source)
+        pathname = os.path.join(dirname, '%s.tsv' % revision)
+        print('--> %s' % pathname, file=sys.stderr)
 
         if revision in GB:
             source = 'gb'
 
-        with open(dirname, 'w') as dest_file:
+        if not os.path.exists(dirname):
+            os.makedirs(dirname)
+
+        with open(pathname, 'w') as dest_file:
             print(b'Source\tRevision\tCode\tName', file=dest_file)
             for line in iter_lines(el, schema):
                 text = strip_spaces_in_chinese_words(strip_comments(line))
