@@ -2,8 +2,8 @@
 
 Implement in your favorite languages by following this specification.
 
-* Version: 0.2
-* Date: 2015-09-23
+* Version: 1.0
+* Date: Not Decided
 * Authors: Hsiaoming Yang, Jiangge Zhang
 
 
@@ -18,7 +18,7 @@ should be included in it.
 
 - `code`: (str) The six-digit number of the specific administrative division.
 - `name`: (str) The Chinese name of the specific administrative division.
-- `revision`: (str) The revision year (month).
+- `source`: (str) The source and revision year (month).
 
 For example, a county of Beijing in JavaScript is defined like this:
 
@@ -26,7 +26,7 @@ For example, a county of Beijing in JavaScript is defined like this:
 {
   "code": "110105",
   "name": "朝阳区",
-  "revision": "2014"
+  "source": "stats-2014"
 }
 ```
 
@@ -38,7 +38,7 @@ division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 {
   "code": "110100",
   "name": "市辖区",
-  "revision": "2014"
+  "source": "stats-2014"
 }
 ```
 
@@ -46,7 +46,7 @@ division codes `XX0000` (`X` is non-zero digit) mean provinces. And there are
 {
   "code": "110000",
   "name": "北京市",
-  "revision": "2014"
+  "source": "stats-2014"
 }
 ```
 
@@ -72,10 +72,10 @@ A description of current division. e.g.
 The interface MUST have a constructor method to create a new instance:
 
 ```
-gb2260 = new GB2260(str revision)
+gb2260 = new GB2260(str source)
 ```
 
-If `revision` is not specified, use the latest data.
+If `source` is not specified, use the latest GB data.
 
 
 ### `.get(str code)`
@@ -89,10 +89,11 @@ gb2260.get("110105")
 {
   "code": "110105",
   "name": "朝阳区",
-  "revision": "2014"
+  "source": "stats-2014"
 }
 ```
 
+If code doesn't match any division, return nil/none/null.
 
 ### `.provinces()` 省
 
