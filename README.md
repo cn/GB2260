@@ -5,7 +5,10 @@
 
 中华人民共和国国家标准 GB/T 2260 行政区划代码
 
-数据来源： <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/>
+数据来源：
+
+1. <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/>
+2. <http://www.mca.gov.cn/article/sj/tjbz/a/>
 
 你可以利用国家标准数据构建自己项目的数据库。
 
