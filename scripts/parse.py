@@ -3,10 +3,10 @@
 
 from __future__ import print_function
 
-import csv
 import os
 import re
 import sys
+import csv
 import itertools
 
 import requests
@@ -23,8 +23,6 @@ XPATH_MASS_EXPRS = [
 XPATH_MCA_EXPRS = [
     './/tr',
 ]
-
-GB = ['200212', '200712']
 
 
 def strip_spaces_in_chinese_words(line):
@@ -111,9 +109,6 @@ def main():
         dirname = os.path.join(sys.argv[2], source)
         pathname = os.path.join(dirname, '%s.tsv' % revision)
         print('--> %s' % pathname, file=sys.stderr)
-
-        if revision in GB:
-            source = 'gb'
 
         if not os.path.exists(dirname):
             os.makedirs(dirname)
