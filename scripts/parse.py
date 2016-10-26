@@ -122,6 +122,8 @@ def main():
 
                 try:
                     code, name = text.split()
+                    if len(code) != 6:
+                        raise ValueError()
                     code = int(code)
                 except ValueError:
                     print('ignored: %s' % text, file=sys.stderr)
