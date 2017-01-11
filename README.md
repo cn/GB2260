@@ -69,8 +69,6 @@ Repository: <https://github.com/cn/GB2260.php>
 
 Repository: <https://github.com/cn/GB2260.go>
 
-[![Build Status](https://travis-ci.org/damonchen/gb2260.svg?branch=master)](https://travis-ci.org/damonchen/gb2260)
-
 ### Elixir
 
 Repository: <https://github.com/cn/GB2260.ex>
