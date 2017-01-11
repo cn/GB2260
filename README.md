@@ -59,19 +59,29 @@ Repository: <https://github.com/cn/GB2260.java>
 [![Build Status](https://travis-ci.org/cn/GB2260.java.svg?branch=master)](https://travis-ci.org/cn/GB2260.java)
 [![Coverage Status](https://coveralls.io/repos/cn/GB2260.java/badge.svg?branch=master&service=github)](https://coveralls.io/github/cn/GB2260.java?branch=master)
 
-
 ### PHP
 
 Repository: <https://github.com/cn/GB2260.php>
 
+[![Build Status](https://travis-ci.org/cn/GB2260.php.svg?branch=master)](https://travis-ci.org/cn/GB2260.php)
 
 ### Go
 
 Repository: <https://github.com/cn/GB2260.go>
 
+[![Build Status](https://travis-ci.org/damonchen/gb2260.svg?branch=master)](https://travis-ci.org/damonchen/gb2260)
+
 ### Elixir
 
 Repository: <https://github.com/cn/GB2260.ex>
+
+[![Build Status](https://travis-ci.org/cn/GB2260.ex.svg?branch=master)](https://travis-ci.org/cn/GB2260.ex)
+
+### Swift
+
+Repository: <https://github.com/cn/GB2260.swift>
+
+[![Build Status](https://travis-ci.org/cn/GB2260.swift.svg?branch=master)](https://travis-ci.org/cn/GB2260.swift)
 
 
 ## 如何贡献
