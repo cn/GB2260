@@ -103,7 +103,7 @@ def main():
 
     for source, revision, url, schema in url_list:
         user_agent = {'User-agent': 'Mozilla/5.0'}
-        req = requests.get(url,headers = user_agent)
+        req = requests.get(url, headers=user_agent)
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
