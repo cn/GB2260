@@ -104,6 +104,11 @@ def main():
     for source, revision, url, schema in url_list:
         user_agent = {'User-agent': 'Mozilla/5.0'}
         req = requests.get(url, headers=user_agent)
+        if req.status_code != 200:
+            # resource has been deleted.
+            msg = 'error: %s/%s %s' % (source, revision, req.status_code)
+            print(msg, file=sys.stderr)
+            continue
         req.encoding = 'utf-8'
         el = fromstring(req.text)
 
