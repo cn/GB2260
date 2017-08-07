@@ -18,12 +18,6 @@ Badges with spec versions:
 
 [![Spec v0.2](https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg)](https://github.com/cn/GB2260/blob/v0.2/spec.md)
 
-```
-Badge: https://img.shields.io/badge/GB%2FT%202260-v0.2-blue.svg
-Link: https://github.com/cn/GB2260/blob/v0.2/spec.md
-```
-
-
 ## 语言实现
 
 目前已有的语言实现
