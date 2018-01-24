@@ -81,6 +81,11 @@ Repository: <https://github.com/cn/GB2260.swift>
 
 [![Build Status](https://travis-ci.org/cn/GB2260.swift.svg?branch=master)](https://travis-ci.org/cn/GB2260.swift)
 
+### .NET / C#
+
+Repository: <https://github.com/cn/GB2260.cs>
+
+[![Build Status](https://travis-ci.org/cn/GB2260.cs.svg?branch=master)](https://travis-ci.org/cn/GB2260.cs)
 
 ## 如何贡献
 
