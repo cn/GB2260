@@ -102,9 +102,9 @@ def county_parser(els, write_row_fn):
 
 def fill_not_included_data(write_row_fn):
     data = [
-        {'710000': '台湾省'},
-        {'810000': '香港特别行政区'},
-        {'820000': '澳门特别行政区'}
+        {'710000': u'台湾省'},
+        {'810000': u'香港特别行政区'},
+        {'820000': u'澳门特别行政区'}
     ]
     for item in data:
         for k, v in item.items():
