@@ -7,8 +7,8 @@
 
 数据来源：
 
-1. <http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/>
-2. <http://www.mca.gov.cn/article/sj/tjbz/a/>
+1. <http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/>
+2. <http://www.mca.gov.cn/article/sj/xzqh/>
 
 你可以利用国家标准数据构建自己项目的数据库。
 
