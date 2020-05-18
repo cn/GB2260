@@ -40,14 +40,14 @@ class Parser:
         req.encoding = 'utf-8'
         content = req.text
 
-        if "".__eq__(content):
+        if not content.strip():
             print('content of url %s is empty' % url, file=sys.stderr)
             return
 
         self.parse_by_content(dirname, source, revision, content, schema)
 
     def parse_by_content(self, dirname, source, revision, content, schema):
-        if "".__eq__(content):
+        if not content.strip():
             raise ValueError('content should not be empty')
             
         el = fromstring(content)
