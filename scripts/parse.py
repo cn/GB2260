@@ -28,8 +28,8 @@ XPATH_MCA_EXPRS = [
 def strip_spaces_in_chinese_words(line):
     cjk_chars = u'\u3007\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff'
     return re.sub(
-        ur'(\d{6})(\s+)([%s]+)\s([%s]+)' % (cjk_chars, cjk_chars),
-        ur'\1\2\3\4', line, flags=re.U)
+        r'(\d{6})(\s+)([%s]+)\s([%s]+)' % (cjk_chars, cjk_chars),
+        r'\1\2\3\4', line, flags=re.LU)
 
 
 def strip_comments(line):
