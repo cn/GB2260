@@ -1,2 +1,3 @@
 lxml==4.9.1
 requests==2.20.0
+ttictoc==0.4.1
