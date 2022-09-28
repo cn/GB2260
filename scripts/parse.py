@@ -28,8 +28,8 @@ XPATH_MCA_EXPRS = [
 def strip_spaces_in_chinese_words(line):
     cjk_chars = u'\u3007\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff'
     return re.sub(
-        ur'(\d{6})(\s+)([%s]+)\s([%s]+)' % (cjk_chars, cjk_chars),
-        ur'\1\2\3\4', line, flags=re.U)
+        r'(\d{6})(\s+)([%s]+)\s([%s]+)' % (cjk_chars, cjk_chars),
+        r'\1\2\3\4', line, flags=re.U)
 
 
 def strip_comments(line):
@@ -120,7 +120,7 @@ def main():
             os.makedirs(dirname)
 
         with open(pathname, 'w') as dest_file:
-            print(b'Source\tRevision\tCode\tName', file=dest_file)
+            print('Source\tRevision\tCode\tName', file=dest_file)
             for line in iter_lines(el, schema):
                 text = strip_spaces_in_chinese_words(strip_comments(line))
                 if not text:
@@ -135,7 +135,7 @@ def main():
                     print('ignored: %s' % text, file=sys.stderr)
                 else:
                     out = '%s\t%s\t%s\t%s' % (source, revision, code, name)
-                    print(out.encode('utf-8'), file=dest_file)
+                    print(out, file=dest_file)
 
 
 if __name__ == '__main__':
